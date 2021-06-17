@@ -1,23 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import allCountryScores from "./data/scores"
+import ScoreTables from "./ScoreTables"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     {/*header component*/}
+    <h1 className="Title">HIGH SCORES: INTERNATIONAL</h1>
+    {/*pass array of data as props*/}
+    <ScoreTables results={allCountryScores} />
     </div>
   );
 }

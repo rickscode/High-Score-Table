@@ -3,8 +3,13 @@ import React from "react"
 const ScoreTables = (props) => {
     /*store props in variable*/
     const ScoreData = props.results;
+    /* alphabetical order of country names */
+    const ScoreDataAZ = ScoreData.sort(function(a, b) {
+        return a.name.localeCompare(b.name);
+    })
+    
     /*array map to table data from props and store in variable*/
-    const VisualizeScores = ScoreData.map(Data => (
+    const VisualizeScores = ScoreDataAZ.map(Data => (
       /* table columns */
       <table class="table table-striped table-dark table-bordered">
         <thead>
@@ -14,6 +19,7 @@ const ScoreTables = (props) => {
               </tr>
           </thead>
           <tbody>
+            
           {/* array map again through nested array to table scores in rows */}
               {Data.scores.map(score => (
                 <tr>
